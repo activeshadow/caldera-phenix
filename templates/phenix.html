@@ -1,0 +1,64 @@
+<div x-data="alpinePhenix()" x-init="initPage()">
+    <div>
+        <h2 x-text="name"></h2>
+        <p x-text="description"></p>
+    </div>
+    <hr>
+    <h3>Documentation</h3>
+    <span>
+        Get started by referencing the <a href="/docs/plugins/phenix/phenix.html" target="_blank">phenix Plugin Field Manual</a>.
+    </span>
+    <h3>Planners</h3>
+    <div class="columns planners is-multiline">
+
+        {% for p in planners %}
+            <div class="column is-one-quarter p-1 m-0">
+                <div id="otbox" class="box p-3 m-1" @mouseleave="handleBoxExit">
+                    <div id="inner_otbox">
+                        <p>
+                            <span class="has-text-weight-bold">{{p.name}}</span>
+                        </p>
+                        <p class="help mb-0">{{p.description|safe}}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+
+function handleBoxExit(e){
+    console.log("box exit trigger");
+    e.target.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function alpinePhenix() {
+    return {
+
+        name: '{{ name }}',
+        description: '{{ description }}',
+
+        initPage() {
+            console.log('initpage complete.')
+        }
+    };
+}
+</script>
+
+<style>
+#inner_otbox{
+    margin-right: 15px;
+}
+#otbox{
+    height: 200px;
+    background-color: var(--primary-color-translucent);
+    overflow-y: hidden;
+}
+#otbox:hover{
+    outline: 3px;
+    outline-color: var(--primary-color);
+    outline-style: solid;
+    overflow-y: scroll;
+}
+</style>
