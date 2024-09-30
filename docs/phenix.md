@@ -5,5 +5,5 @@ The `phenix` plugin provides a specialized operations planner (aptly called
 is repeatable.
 
 In addition, the planner will only operate on agents whose host names match a
-`planner.phenix.agent` fact trait value (unless no facts with that trait name
-exist).
+`<unique>.planner.phenix.agent` fact trait value (unless no facts with that
+trait name exist).

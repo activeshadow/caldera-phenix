@@ -19,7 +19,7 @@ class LogicalPlanner:
         operators = self.operation.agents
 
         for fact in facts:
-            if fact.trait == 'planner.phenix.agent':
+            if fact.trait.endswith('.planner.phenix.agent'):
                 agents.append(fact.value) # fact value is expected to be a hostname
 
         # If specific agents were provided as fact traits, limit to operating

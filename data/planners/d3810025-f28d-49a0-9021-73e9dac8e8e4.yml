@@ -5,8 +5,8 @@ name: phenix
 description: |
   The phenix planner only executes an ability once per agent, even if the
   ability is repeatable. In addition, if a list of agent host names is provided
-  in the facts source (using the trait name "planner.phenix.agent"), the agents
-  operated on will be limited to said list.
+  in the facts source (using the trait name "<unique>.planner.phenix.agent"),
+  the agents operated on will be limited to said list.
 module: plugins.phenix.app.planners.phenix
 params: {}
 ignore_enforcement_modules: []
